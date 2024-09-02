@@ -1,0 +1,27 @@
+[global: main]
+
+.main:
+    reg r15, [12]
+    memalc r15
+    mov rdi, r10
+
+    memwr r10, "\n"
+    memwr rsp,  [255]
+
+    reg r9, [0]
+
+    clean
+    jmp writeblock
+    
+    memfr r10, r15
+
+.writeblock:
+    clean
+    setch $r9
+    write
+    
+    sum r9, [1]
+    mov rax, r9
+    neql $r9, [255]
+    push rdx
+    jep writeblock

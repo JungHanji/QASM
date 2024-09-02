@@ -1,0 +1,5 @@
+.main:
+    reg rax, [255]
+    __debug_reg rax
+
+[global: main]

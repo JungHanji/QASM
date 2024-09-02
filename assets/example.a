@@ -1,0 +1,21 @@
+$nass/another.a
+
+.main:
+    ;reg rax, 100
+    
+    eql [100], [100]
+
+    push rdx
+    jep block
+
+    clean
+    setch 'n'
+    write
+
+    jmp block
+
+    ;clean
+    ;setch [10]
+    ;write
+
+[global: main]
